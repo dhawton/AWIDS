@@ -1,0 +1,33 @@
+Thanks for downloading AW's IDS.  This is a project that has spanned several hundreds of hours of work and over 5100 lines of code.
+
+This is the first public beta release, allowing input from others to improve the experience and finish polishing off before the first public release.
+
+System requirements:
+Perl 5.8 or later
+- LWP::UserAgent Module
+- DBI Module
+PHP 5.3 or later
+MySQL 5 or later
+Scheduling system (crontab)
+
+Installation instructions:
+1) Extract the files into your website, import the ids.sql file into your MySQL database
+2) Set appropriate settings to put the IDS on its own subdomain
+3) Modify the following files to point at the appropriate installation location
+-- apps/pilots.php
+-- apps/cron.pl
+-- All files in dhtml/ to point to the correct location for inc/include.php
+4) Configure inc/config.php
+5) Modify inc/mod.auth.php to support your facility's authentication algorithm
+-- $_SESSION['loggedin'] set to 1 to tell the application the user has logged in
+-- In its current state, it is setup to login against the SMF forum database
+6) This is the hard part, you will need to configure your facility in the database
+-- Add your facilities (radar facilities, IE, Central Florida TRACON, Jacksonville ATCT, etc.) in the table Facilities
+	Columns: FacilityID (the 3 letter identifier for the facility, IE: F11, JAX), FullName (text name for the facility: Central Florida TRACON, Jacksonville ATCT), Active (1 is Active, 0 Inactive [not presently used])
+-- Add supported fields to the table Fields
+	Columns: FacilityID (3 letter identifer for the overlaying radar facility, see above), FieldID (ICAO identifier), IATA (3 letter identifier for the airport), FullName (full text name for the airport), (leave the following blank)ATIS, Runways, EDCT, Approach 
+7) Now configure apps/cron.pl
+-- Set your username, password
+-- Modify the @stations array to either be inclusive of arrays separating the airports by its overlaying radar facility, or to be a list of all airports. In its present state, it features all ZJX airports in arrays showing its overlaying radar facility and @stations is a list of the radar facilities
+8) Configure your scheduling service to run cron.pl at an interval you deem necessary.  Keep in mind, this will update /ALL/ fields defined and will only update them when the script is run.  ZJX uses every 15 minutes.
+9) Configure your scheduling service to run pilots.php every minute.  It will only update from VATSIM data feeds when it is necessary (using data from the feed of ReloadTime and Last Update values)

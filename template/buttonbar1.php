@@ -1,0 +1,1 @@
+<img src="/images/atisplus.jpg" onClick="drawATIS()" /><img src="/images/atisx.jpg" onClick="drawATISx();"><img src="/images/pirep.jpg" onClick="drawPIREP();"><a href="/?f=exit"><img src="/images/exit.jpg" border="0"></a>
