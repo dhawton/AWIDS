@@ -35,7 +35,11 @@ if (!isset($_REQUEST['field']))
 <table border="0" cellspacing="0" cellpadding="2" style="color: #ffffff">
 <tr><td>Airport:</td><td><select id="atisfield"><?php
 $IDS->db_build($db);
-$IDS->db_query($db,$res,"SELECT `IATA` FROM `Fields` WHERE `FacilityID`='".$_SESSION['facility']."' ORDER BY `IATA`");
+if ($_SESSION['facility'] == $CONF['ENRFacility']) {
+	$IDS->db_query($db,$res,"SELECT `IATA` FROM `Fields` ORDER BY `IATA`");
+} else {
+	$IDS->db_query($db,$res,"SELECT `IATA` FROM `Fields` WHERE `FacilityID`='".$_SESSION['facility']."' ORDER BY `IATA`");
+}
 while ($row = mysql_fetch_assoc($res)) { echo '<option value="'.$row['IATA'].'">'.$row['IATA'].'</option>'; }
 ?></select></td></tr>
 <tr><td>&nbsp;</td><td><input type="button" value="Submit" onClick="processATISx()"></td></tr>
