@@ -31,3 +31,4 @@ Installation instructions:
 -- Modify the @stations array to either be inclusive of arrays separating the airports by its overlaying radar facility, or to be a list of all airports. In its present state, it features all ZJX airports in arrays showing its overlaying radar facility and @stations is a list of the radar facilities
 8) Configure your scheduling service to run cron.pl at an interval you deem necessary.  Keep in mind, this will update /ALL/ fields defined and will only update them when the script is run.  ZJX uses every 15 minutes.
 9) Configure your scheduling service to run pilots.php every minute.  It will only update from VATSIM data feeds when it is necessary (using data from the feed of ReloadTime and Last Update values)
+10) Replace the file /images/logo.jpg with your logo.  It should be 90x70 in size to ensure seemless integration.
