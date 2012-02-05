@@ -30,6 +30,8 @@ $CONF['db']['user'] = "username";
 $CONF['db']['pass'] = "password";
 $CONF['db']['server'] = "localhost";
 
+$CONF['installdir'] = "/home/zjxartcc/www/ids/";
+
 $CONF['db']['ids_db'] = "IDS database name";
 $CONF['db']['wx_db'] = "Wx Database name";
 $CONF['db']['users_db'] = "user database name";

@@ -26,7 +26,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************************************/
 
-require_once("/home/zjxartcc/www/ids/inc/include.php");
+require_once("../inc/include.php");
 header("Content-type: text/plain");
 
 if (!isset($_REQUEST['id']))

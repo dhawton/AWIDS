@@ -26,7 +26,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************************************/
 
-require_once("/home/zjxartcc/www/ids/inc/include.php");
+require_once("../inc/include.php");
 header("Content-type: text/plain");
 ?>
 <table cellspacing="0" cellpadding="0" style="width: 100%; background-color: #5c5c5c; border-width: 1px 1px 1px 1px; border-style: solid; border-color: #ff0000;">

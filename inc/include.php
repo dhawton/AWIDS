@@ -27,7 +27,7 @@
  *********************************************************************************************/
 
 session_start();
-set_include_path("/home/zjxartcc/www/ids");
+set_include_path($CONF['installdir']);
 require_once("inc/config.php");
 require_once("inc/mod.awdb.php");
 require_once("inc/mod.auth.php");

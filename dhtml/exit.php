@@ -26,7 +26,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************************************/
 
-require_once("/home/zjxartcc/www/ids/inc/include.php");
+require_once("../inc/include.php");
 header("Content-type: text/plain");
 
 $_SESSION['loggedin'] = $_SESSION['fname'] = $_SESSION['lname'] = $_SESSION['username'] = $_SESSION['facility'] = "";

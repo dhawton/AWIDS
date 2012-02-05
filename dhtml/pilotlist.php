@@ -26,8 +26,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************************************/
 
-set_include_path("/home/zjxartcc/www/ids");
-require_once("/home/zjxartcc/www/ids/inc/include.php");
+require_once("../inc/include.php");
 header("Content-type: text/xml");
 
 echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<results>\n";

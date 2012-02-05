@@ -17,7 +17,7 @@ Installation instructions:
 -- apps/pilots.php
 -- apps/cron.pl
 -- All files in dhtml/ to point to the correct location for inc/include.php
-4) Configure inc/config.php
+4) Configure inc/config.sample.php and rename to inc/config.php
 5) Modify inc/mod.auth.php to support your facility's authentication algorithm
 -- $_SESSION['loggedin'] set to 1 to tell the application the user has logged in
 -- In its current state, it is setup to login against the SMF forum database

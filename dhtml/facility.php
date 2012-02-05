@@ -26,8 +26,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************************************/
 
-set_include_path("/home/zjxartcc/www/ids");
-require_once("/home/zjxartcc/www/ids/inc/include.php");
+require_once("../inc/include.php");
 header("Content-type: text/plain");
 
 $_SESSION['facility'] = $_REQUEST['facility'];

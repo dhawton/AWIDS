@@ -26,7 +26,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************************************/
 
-require_once("/home/zjxartcc/www/ids/inc/include.php");
+require_once("../inc/include.php");
 header("Content-type: text/plain");
 
 if (!isset($_REQUEST['field']))
@@ -56,7 +56,7 @@ while ($row = mysql_fetch_assoc($res)) { echo '<option value="'.$row['IATA'].'">
 	$fac = "ATIS".$_REQUEST['field'];
 	$_SESSION[$fac] = $_REQUEST['atis'];
 	if (mysql_affected_rows($db) == 1) { echo "1"; } else { echo "-1"; 
-		$fp = fopen("/home/zjxartcc/www/ids/dhtml/atis.log","a"); fwrite($fp, mysql_affected_rows($db)."\n"); fclose($fp);
+		$fp = fopen("../dhtml/atis.log","a"); fwrite($fp, mysql_affected_rows($db)."\n"); fclose($fp);
 	}
 
 }
